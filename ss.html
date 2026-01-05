@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viknesh Pathmarajah | Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --gray: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Hero */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a2530 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+        
+        .hero {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .hero h2 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item i {
+            color: var(--secondary);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary);
+            font-size: 2.2rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Education */
+        .education-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary);
+        }
+        
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .edu-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .edu-date {
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .edu-details {
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
+        
+        .highlight {
+            background-color: #e8f4fc;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--primary);
+            display: inline-block;
+            margin-top: 10px;
+        }
+        
+        /* Experience */
+        .experience-item {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .exp-title {
+            font-size: 1.4rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .exp-company {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .exp-date {
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .exp-details {
+            margin-top: 15px;
+        }
+        
+        .exp-details li {
+            margin-bottom: 8px;
+            margin-left: 20px;
+        }
+        
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-number {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .project-content {
+            padding: 25px;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        /* Skills */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            min-width: 250px;
+            flex: 1;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.4rem;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background-color: #e8f4fc;
+            color: var(--primary);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .skill-tag.advanced {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .skill-tag.intermediate {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .skill-tag.basic {
+            background-color: #ecf0f1;
+            color: var(--primary);
+        }
+        
+        /* Certifications */
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .cert-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: 300px;
+            text-align: center;
+            border-top: 4px solid var(--secondary);
+        }
+        
+        .cert-card h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .cert-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .edu-header, .exp-header {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Hero Section -->
+    <header>
+        <div class="container">
+            <div class="hero">
+                <h1>Viknesh Pathmarajah</h1>
+                <h2>Cybersecurity Graduate Student | Seeking Internship: May'26-Aug'26</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ypathmar@andrew.cmu.edu</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(412) 606-5278</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/viknesh-pathmarajah</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="edu-header">
+                    <div>
+                        <h3 class="edu-title">Carnegie Mellon University</h3>
+                        <p class="edu-details">Master of Science in Information Security</p>
+                    </div>
+                    <div class="edu-date">Expected 2026</div>
+                </div>
+                <ul>
+                    <li>GPA: 4.0/4.0</li>
+                    <li>Relevant Courses: Introduction to Computer Systems, Applied Information Assurance</li>
+                </ul>
+            </div>
+            
+            <div class="education-item">
+                <div class="edu-header">
+                    <div>
+                        <h3 class="edu-title">Vellore Institute of Technology</h3>
+                        <p class="edu-details">Bachelor of Technology in Computer Science and Engineering</p>
+                        <p class="edu-details">Specialization in Cyber Physical Systems</p>
+                    </div>
+                    <div class="edu-date">Graduated 2024</div>
+                </div>
+                <ul>
+                    <li>Graduated with University Rank 1; CGPA 9.54/10</li>
+                    <li>Relevant Courses: Cryptography and Network Security, Computer Networks, Software Engineering, Operating Systems</li>
+                </ul>
+                <span class="highlight">University Rank 1</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <h3 class="exp-title">Python Instructor</h3>
+                        <p class="exp-company">Code in Place By Stanford University (Online)</p>
+                    </div>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li>Taught Python programming to a diverse group of students globally, fostering a collaborative learning environment and enhancing coding skills through interactive sessions and hands-on projects</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <h3 class="exp-title">Software Engineering & IoT Developer Intern</h3>
+                        <p class="exp-company">Tunga Aerospace Industries Pvt Ltd</p>
+                    </div>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li>Engineered a problem solving PCB fixture to computerize wiring verification and slashed miswiring issues by 70%</li>
+                        <li>Guided development of a company-wide Component Organization and Classification Software leveraging HTML, CSS, and JavaScript with backend database; is still deployed across organization for efficient parts classification</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <h3 class="exp-title">SOC Analyst Intern</h3>
+                        <p class="exp-company">AGS Health</p>
+                    </div>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li>Mitigated security risks by leading phishing investigations and executing automated firewall checks, safeguarding sensitive company data and reducing manual workload for senior staff by 33%</li>
+                        <li>Applied technical knowledge of SAST and DAST frameworks for a mobile application leveraged by company employees and found 2 medium risk vulnerabilities and reported</li>
+                        <li>Performed analysis of endpoints in compliance with client's security requirements as a part of 8-person team</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Academic Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-number">Project 1</div>
+                    <div class="project-content">
+                        <h3 class="project-title">AI-Driven Honeypot System with Automated Incident Response</h3>
+                        <ul>
+                            <li>Legal data from the AI-driven honeypot architecture simulating real-world services to capture and analyze attacker TTPs</li>
+                            <li>Guided development of RNN models for anomaly detection and automated response, validating system performance against simulated DDoS and brute-force attacks</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-number">Project 2</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Multi-Agent System for Railway Track Inspection</h3>
+                        <ul>
+                            <li>Engineered a multi-agent rover system for autonomous railway inspection, leading a team of 3</li>
+                            <li>Spearheaded development of real-time, YOLO-based computer vision pipeline for crack detection and implemented MQTT protocols for reliable inter-rover communication and adaptive task coordination</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-number">Project 3</div>
+                    <div class="project-content">
+                        <h3 class="project-title">Auto-Reactive HoneyBeet – Automated Deception & Response Lab</h3>
+                        <ul>
+                            <li>Designed a proof-of-concept defense system integrating deception, centralized logging, and computerized orchestration to contain attackers in real time</li>
+                            <li>Configured syslog clients and Python detection scripts to forward and monitor honeytoken access across production and honeypot</li>
+                            <li>Built Ansible playbooks to update Linux iptables and transparently redirect malicious traffic into a honeypot</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag advanced">Python (Advanced)</span>
+                        <span class="skill-tag intermediate">C (Intermediate)</span>
+                        <span class="skill-tag intermediate">SQL (Intermediate)</span>
+                        <span class="skill-tag basic">C++ (Basic)</span>
+                        <span class="skill-tag basic">Java (Basic)</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Security Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag intermediate">Nmap</span>
+                        <span class="skill-tag intermediate">Newpose</span>
+                        <span class="skill-tag intermediate">Tenable Nessus</span>
+                        <span class="skill-tag intermediate">Wireshark</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag advanced">English (Fluent)</span>
+                        <span class="skill-tag advanced">Tamil (Fluent)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            
+            <div class="certifications">
+                <div class="cert-card">
+                    <h3>CompTIA Security+ (SY0-701)</h3>
+                    <p>CompTIA</p>
+                    <p><strong>Issued:</strong> October 2025</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>Certified Ethical Hacker v12 (CEH v12)</h3>
+                    <p>EC-Council</p>
+                    <p><strong>Issued:</strong> August 2024</p>
+                </div>
+                
+                <div class="cert-card">
+                    <h3>Google Cybersecurity Certificate</h3>
+                    <p>Google</p>
+                    <p><strong>Issued:</strong> June 2024</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h2>Let's Connect!</h2>
+                <div class="social-links">
+                    <a href="mailto:ypathmar@andrew.cmu.edu" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/viknesh-pathmarajah" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="tel:+14126065278" title="Phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+                <p class="copyright">© 2025 Viknesh Pathmarajah. All rights reserved.</p>
+                <p class="copyright">Seeking Internship: May 2026 - August 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add a subtle animation to project cards on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            projectCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 300 + (index * 150));
+            });
+        });
+    </script>
+</body>
+</html>
